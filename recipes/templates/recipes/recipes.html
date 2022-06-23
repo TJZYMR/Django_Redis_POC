@@ -1,0 +1,21 @@
+hello from the list of recipes
+
+here are the available recipes
+<table>
+    <thead>
+        <tr>
+            <th>Category Name</th>
+            <th>Recipe Name</th>
+            <th>More info</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for recipe in recipes %}
+            <tr>
+                <td>{{ recipe.category.name }}</td>
+                <td>{{ recipe.name }}</td>
+                <td><a href="{% url 'recipe' recipe.id%}">More info</a></td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
